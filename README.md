@@ -3,13 +3,13 @@
 
 ### Prerequisites:
 
-|what     | where                            | version |
-|---------|----------------------------------|---------|
-|bwa      | http://bio-bwa.sourceforge.net/  | 0.7.12  |
-|samtools | http://samtools.sourceforge.net/ | 1.2     |
-|pysam    | pip install pysam                | 0.8.1   |
-|sra-tools| https://github.com/ncbi/sra-tools| 2.5.2   |
-
+|what     | where                                                  | version |
+|---------|--------------------------------------------------------|---------|
+|bwa      | http://bio-bwa.sourceforge.net/                        | 0.7.12  |
+|samtools | http://samtools.sourceforge.net/                       | 1.2     |
+|pysam    | pip install pysam                                      | 0.8.1   |
+|sra-tools| https://github.com/ncbi/sra-tools                      | 2.5.2   |
+|bx-python| https://bitbucket.org/james_taylor/bx-python/wiki/Home | 0.7.2   |
 
 
 ### Obtain reference information that was too big to put into this repository:
