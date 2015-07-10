@@ -24,7 +24,8 @@ elsasser = pysam.Tabixfile(elsasser_tabix)
 
 
 class Coord:
-    def __init__(self, chrom, start, end, strand, mchrom, mstart, mend, mstrand, label, bam_name):
+    def __init__(self, name, chrom, start, end, strand, mchrom, mstart, mend, mstrand, label, bam_name):
+        self.name    = name
         self.chrom   = chrom
         self.start   = int(start)
         self.end     = int(end)
@@ -51,7 +52,7 @@ class Coord:
 
 
     def __str__(self):
-        return '\t'.join(map(str, (self.bam, self.label, self.chrom, self.start, self.end, self.strand, self.mchrom, self.mstart, self.mend, self.mstrand)))
+        return '\t'.join(map(str, (self.name, self.bam, self.label, self.chrom, self.start, self.end, self.strand, self.mchrom, self.mstart, self.mend, self.mstrand)))
 
 
 
@@ -134,7 +135,7 @@ def get_coords(forest, bams, min_mapq=1, min_dist=10000):
 
                     if mchrom in forest:
                         for rec in forest[mchrom].find(mstart, mend):
-                            coords.append(Coord(rchrom, rstart, rend, rstr, mchrom, mstart, mend, mstr, rec.value, os.path.basename(bam.filename)))
+                            coords.append(Coord(read.qname, rchrom, rstart, rend, rstr, mchrom, mstart, mend, mstr, rec.value, os.path.basename(bam.filename)))
                             break
 
             if i % tick == 0:
